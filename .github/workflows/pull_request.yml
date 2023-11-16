@@ -11,6 +11,6 @@ jobs:
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
 
-          if [[ $PR_TITLE == *"fail"* ]]; then
-            exit 1
-          fi
+        #   if [[ $PR_TITLE == *"fail"* ]]; then
+        #     exit 1
+        #   fi

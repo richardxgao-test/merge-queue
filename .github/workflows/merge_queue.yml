@@ -6,7 +6,7 @@ on:
   merge_group:
 
 jobs:
-  validate-main:
+  validate-pr:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
