@@ -7,12 +7,10 @@ jobs:
   validate-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Display info
+      - name: Check PR Title
         run: |
-          pwd
-          tree -a -I '.git'
-          git status
-      - name: Sleep for 5 seconds
-        run: sleep 5
+          PR_TITLE="${{ github.event.pull_request.title }}"
+
+          if [[ $PR_TITLE == *"fail"* ]]; then
+            exit 1
+          fi
