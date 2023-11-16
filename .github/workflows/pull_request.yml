@@ -1,4 +1,4 @@
-name: Sleep for 5 seconds
+name: Validate PR
 
 on:
   pull_request:
