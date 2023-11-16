@@ -11,5 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Sleep for 1 minute
+        run: sleep 60
+      - name: Check PR branch
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+
+          if [[ $BRANCH_NAME == *"fail"* ]]; then
+              exit 1
+          fi
       - name: Sleep for 2 minutes
         run: sleep 120
