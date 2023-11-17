@@ -11,13 +11,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Sleep for 15s
-        run: sleep 15
+      - name: Sleep for 5s
+        run: sleep 5
       - name: Check PR branch
         run: |
-          BRANCH_NAME="${{ github.event.ref }}"
+          BRANCH_NAME="${{ github.ref_name }}"
 
-          if [[ $BRANCH_NAME == *"fail"* ]]; then
+          if [[ $BRANCH_NAME == *"pr-7"* ]]; then
               exit 1
           fi
       - name: Sleep for 2 minutes
