@@ -20,5 +20,9 @@ jobs:
           if [[ $BRANCH_NAME == *"pr-10"* ]]; then
               exit 1
           fi
+
+          if [[ $BRANCH_NAME == *"pr-13"* ]]; then
+            exit 1
+          fi
       - name: Sleep for 30 seconds
         run: sleep 30
