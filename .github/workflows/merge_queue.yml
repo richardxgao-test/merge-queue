@@ -17,8 +17,8 @@ jobs:
         run: |
           BRANCH_NAME="${{ github.ref_name }}"
 
-          if [[ $BRANCH_NAME == *"pr-7"* ]]; then
+          if [[ $BRANCH_NAME == *"pr-9"* ]]; then
               exit 1
           fi
-      - name: Sleep for 10 seconds
-        run: sleep 10
+      - name: Sleep for 30 seconds
+        run: sleep 30
