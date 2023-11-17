@@ -15,7 +15,7 @@ jobs:
         run: sleep 15
       - name: Check PR branch
         run: |
-          BRANCH_NAME="${{ github.ref_name }}"
+          BRANCH_NAME="${{ github.event.ref }}"
 
           if [[ $BRANCH_NAME == *"fail"* ]]; then
               exit 1
